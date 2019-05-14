@@ -1,0 +1,11 @@
+---
+layout: post
+title: Fix git error:Could not read from remote repository in pycharm or other IDE
+date: 2019-05-13 15:52:24.000000000 +09:00
+---
+
+#### The error detail
+you can git add,commit,push in terminal,but cannot push with IDE,the error info is Could not read from remote repository;
+
+#### Fix
+open Preference -> open Version Control -> click git -> select SSH execute to Native.
