@@ -1,9 +1,9 @@
 # Basic
-title: Vno Jekyll
-subtitle: A blog-orientation theme for Jekyll
-welcome_message: <a href="https://github.com/onevcat/vno-jekyll" target="_blank">Download the theme</a>
-description: Vno Jekyll is a port of my Ghost theme vno.
-creator: <a href="http://onev.cat">@onevcat</a>
+title: Welcome
+subtitle: DLY's Blog
+#welcome_message: <a href="https://github.com/onevcat/vno-jekyll" target="_blank">Download the theme</a>
+description: This is personnal blog.
+creator: <a href="http://onev.cat">@dly</a>
 
 url: "http://vno.onevcat.com"
 
@@ -47,4 +47,5 @@ social:
 ga:
     # id: your_ga_id
     # host: your_host
-theme: jekyll-theme-time-machine
+#theme: jekyll-theme-time-machine
+theme: jekyll-theme-leap-day
