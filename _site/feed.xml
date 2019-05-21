@@ -5,59 +5,12 @@
     <description>This is personnal blog.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 14 May 2019 17:22:13 +0800</pubDate>
-    <lastBuildDate>Tue, 14 May 2019 17:22:13 +0800</lastBuildDate>
+    <pubDate>Tue, 21 May 2019 17:16:52 +0800</pubDate>
+    <lastBuildDate>Tue, 21 May 2019 17:16:52 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
-        <title>Fix git push error in pycharm or other IDE</title>
-        <description>&lt;h4 id=&quot;the-error-detail&quot;&gt;The error detail:&lt;/h4&gt;
-&lt;p&gt;you can git add,commit,push in terminal,but cannot push with IDE,the error info is &lt;code class=&quot;highlighter-rouge&quot;&gt;Could not read from remote repository&lt;/code&gt;;&lt;/p&gt;
-
-&lt;h4 id=&quot;fix&quot;&gt;Fix:&lt;/h4&gt;
-&lt;p&gt;open &lt;code class=&quot;highlighter-rouge&quot;&gt;Preference&lt;/code&gt; -&amp;gt; open &lt;code class=&quot;highlighter-rouge&quot;&gt;Version Control&lt;/code&gt; -&amp;gt; click &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt; -&amp;gt; select &lt;code class=&quot;highlighter-rouge&quot;&gt;SSH execute&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;Native&lt;/code&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 14 May 2019 13:53:24 +0800</pubDate>
-        <link>http://localhost:4000/2019/05/git-error/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/05/git-error/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Install jekyll</title>
-        <description>&lt;p&gt;Start my blog；&lt;/p&gt;
-&lt;h4 id=&quot;install-rvm&quot;&gt;Install RVM&lt;/h4&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl &lt;span class=&quot;nt&quot;&gt;-sSL&lt;/span&gt; https://get.rvm.io | bash &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; stable
-rvm list known
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h4 id=&quot;rvm-install-ruby&quot;&gt;rvm install ruby&lt;/h4&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rvm &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;ruby-2.4.1
-rvm use ruby-2.4.1
-rvm &lt;span class=&quot;nt&quot;&gt;--default&lt;/span&gt; use 2.4.1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h4 id=&quot;install-jekyll&quot;&gt;install jekyll&lt;/h4&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem sources &lt;span class=&quot;nt&quot;&gt;--add&lt;/span&gt; https://gems.ruby-china.com/
-gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jekyll
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h4 id=&quot;run&quot;&gt;Run&lt;/h4&gt;
-&lt;p&gt;create jekyll project,and then add gem theme in Gemfile&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle &lt;span class=&quot;nb&quot;&gt;install
-&lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h4 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h4&gt;
-
-&lt;p&gt;let’s start。&lt;/p&gt;
-</description>
-        <pubDate>Mon, 13 May 2019 14:52:24 +0800</pubDate>
-        <link>http://localhost:4000/2019/05/install-jekyll/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/05/install-jekyll/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Hello World - Vno</title>
+        <title></title>
         <description>&lt;h4 id=&quot;whats-this&quot;&gt;What’s this&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/onevcat/vno-jekyll&quot;&gt;Vno Jekyll&lt;/a&gt; is a theme for &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt;. It is a port of my Ghost theme &lt;a href=&quot;https://github.com/onevcat/vno&quot;&gt;vno&lt;/a&gt;, which is originally developed from &lt;a href=&quot;https://github.com/daleanthony/uno&quot;&gt;Dale Anthony’s Uno&lt;/a&gt;.&lt;/p&gt;
@@ -117,15 +70,15 @@ gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jekyll
 
 &lt;p&gt;Great thanks to &lt;a href=&quot;https://github.com/daleanthony&quot;&gt;Dale Anthony&lt;/a&gt; and his &lt;a href=&quot;https://github.com/daleanthony/uno&quot;&gt;Uno&lt;/a&gt;. Vno Jekyll is based on Uno, and contains a lot of modification on page layout, animation, font and some more things I can not remember. Vno Jekyll is followed with Uno and be licensed as &lt;a href=&quot;http://creativecommons.org/licenses/by/4.0/&quot;&gt;Creative Commons Attribution 4.0 International&lt;/a&gt;. See the link for more information.&lt;/p&gt;
 </description>
-        <pubDate>Tue, 16 Feb 2016 14:32:24 +0800</pubDate>
-        <link>http://localhost:4000/2016/02/hello-world-vno/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/02/hello-world-vno/</guid>
+        <pubDate>Tue, 21 May 2019 17:16:52 +0800</pubDate>
+        <link>http://localhost:4000/2019/05/2016-02-16-hello-world-vno/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/05/2016-02-16-hello-world-vno/</guid>
         
         
       </item>
     
       <item>
-        <title>Sample Post</title>
+        <title></title>
         <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
 &lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
@@ -141,10 +94,115 @@ gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jekyll
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Mon, 15 Feb 2016 14:32:24 +0800</pubDate>
-        <link>http://localhost:4000/2016/02/sample-post/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/02/sample-post/</guid>
+        <pubDate>Tue, 21 May 2019 17:16:52 +0800</pubDate>
+        <link>http://localhost:4000/2019/05/2016-02-15-sample-post/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/05/2016-02-15-sample-post/</guid>
         
+        
+      </item>
+    
+      <item>
+        <title>manage multiple ssh-keys</title>
+        <description>&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;... .ssh]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh-keygen &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; rsa &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;usbmount@geneftp2.nextcode.pharmatechs.com&quot;&lt;/span&gt;
+Generating public/private rsa key pair.
+Enter file &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;which to save the key &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;/home/usbmount/.ssh/id_rsa&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: id_rsa_gitlab
+Enter passphrase &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;empty &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;no passphrase&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:
+Enter same passphrase again:
+Your identification has been saved &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;id_rsa_gitlab.
+Your public key has been saved &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;id_rsa_gitlab.pub.
+The key fingerprint is:
+3a:fe:c4:1c:48:af:2a:f1:a1:fb:94:21:b6:c1:23:54 usbmount@geneftp2.nextcode.pharmatechs.com
+The key&lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;s randomart image is:
++--[ RSA 2048]----+
+|   E             |
+
+▽
+&lt;span class=&quot;c&quot;&gt;# gitlab&lt;/span&gt;
+|  &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;              |
+| &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;    &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;          |
+|..   &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; o         |
+|. &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; S        |
+| o.&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;.o &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;       |
+|  .+o.+ +        |
+|  o..o o         |
+|  .+o ...        |
++-----------------+
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;... .ssh]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh-add id_rsa_gitlab
+Identity added: id_rsa_gitlab &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;id_rsa_gitlab&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;... .ssh]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vim config
+&lt;span class=&quot;c&quot;&gt;# gitlab&lt;/span&gt;
+  HOST gitlab.nextcode.pharmatechs.com
+  HostName gitlab.nextcode.pharmatechs.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa_gitlab
+  User genetfp2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;if you want add another,just do it again.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 14 May 2019 13:53:24 +0800</pubDate>
+        <link>http://localhost:4000/2019/05/sshs/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/05/sshs/</guid>
+        
+        
+        <category>ENV</category>
+        
+      </item>
+    
+      <item>
+        <title>Fix git push error in pycharm or other IDE</title>
+        <description>&lt;h4 id=&quot;the-error-detail&quot;&gt;The error detail:&lt;/h4&gt;
+&lt;p&gt;you can git add,commit,push in terminal,but cannot push with IDE,the error info is &lt;code class=&quot;highlighter-rouge&quot;&gt;Could not read from remote repository&lt;/code&gt;;&lt;/p&gt;
+
+&lt;h4 id=&quot;fix&quot;&gt;Fix:&lt;/h4&gt;
+&lt;p&gt;open &lt;code class=&quot;highlighter-rouge&quot;&gt;Preference&lt;/code&gt; -&amp;gt; open &lt;code class=&quot;highlighter-rouge&quot;&gt;Version Control&lt;/code&gt; -&amp;gt; click &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt; -&amp;gt; select &lt;code class=&quot;highlighter-rouge&quot;&gt;SSH execute&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;Native&lt;/code&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 14 May 2019 13:53:24 +0800</pubDate>
+        <link>http://localhost:4000/2019/05/git-error/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/05/git-error/</guid>
+        
+        
+        <category>ENV</category>
+        
+      </item>
+    
+      <item>
+        <title>Install jekyll</title>
+        <description>&lt;p&gt;Start my blog；&lt;/p&gt;
+&lt;h4 id=&quot;install-rvm&quot;&gt;Install RVM&lt;/h4&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl &lt;span class=&quot;nt&quot;&gt;-sSL&lt;/span&gt; https://get.rvm.io | bash &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; stable
+rvm list known
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;rvm-install-ruby&quot;&gt;rvm install ruby&lt;/h4&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rvm &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;ruby-2.4.1
+rvm use ruby-2.4.1
+rvm &lt;span class=&quot;nt&quot;&gt;--default&lt;/span&gt; use 2.4.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;install-jekyll&quot;&gt;install jekyll&lt;/h4&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem sources &lt;span class=&quot;nt&quot;&gt;--add&lt;/span&gt; https://gems.ruby-china.com/
+gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jekyll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;jekyll-run-with-draft-visible&quot;&gt;jekyll run with draft visible&lt;/h4&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve --draft&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;run&quot;&gt;Run&lt;/h4&gt;
+&lt;p&gt;create jekyll project,and then add gem theme in Gemfile&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle &lt;span class=&quot;nb&quot;&gt;install
+&lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h4&gt;
+
+&lt;p&gt;let’s start。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 13 May 2019 14:52:24 +0800</pubDate>
+        <link>http://localhost:4000/2019/05/install-jekyll/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/05/install-jekyll/</guid>
+        
+        
+        <category>blog</category>
+        
+        <category>building</category>
         
       </item>
     

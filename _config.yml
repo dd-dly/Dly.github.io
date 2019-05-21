@@ -9,6 +9,13 @@ url: "http://vno.onevcat.com"
 
 permalink: /:year/:month/:title/
 
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "post"
+
 # Format
 highlighter: rouge
 

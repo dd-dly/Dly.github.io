@@ -2,6 +2,8 @@
 layout: post
 title: Install jekyll
 date: 2019-05-13 15:52:24.000000000 +09:00
+categories: blog building
+#permalink: /:title
 ---
 Start my blog；
 #### Install RVM
@@ -20,6 +22,9 @@ rvm --default use 2.4.1
 gem sources --add https://gems.ruby-china.com/
 gem install jekyll
 ```
+#### jekyll run with draft visible
+`jekyll serve --draft`
+
 #### Run
 create jekyll project,and then add gem theme in Gemfile
 ```bash

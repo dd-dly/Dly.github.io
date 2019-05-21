@@ -1,0 +1,45 @@
+---
+layout: post
+title: manage multiple ssh-keys
+date: 2019-05-14 14:53:24.000000000 +09:00
+categories: ENV
+---
+
+```bash
+[... .ssh]$ ssh-keygen -t rsa -C "usbmount@geneftp2.nextcode.pharmatechs.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/usbmount/.ssh/id_rsa): id_rsa_gitlab
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in id_rsa_gitlab.
+Your public key has been saved in id_rsa_gitlab.pub.
+The key fingerprint is:
+3a:fe:c4:1c:48:af:2a:f1:a1:fb:94:21:b6:c1:23:54 usbmount@geneftp2.nextcode.pharmatechs.com
+The key''s randomart image is:
++--[ RSA 2048]----+
+|   E             |
+
+▽
+# gitlab
+|  .              |
+| .    .          |
+|..   . o         |
+|. * . . S        |
+| o.=.o = .       |
+|  .+o.+ +        |
+|  o..o o         |
+|  .+o ...        |
++-----------------+
+
+[... .ssh]$ ssh-add id_rsa_gitlab
+Identity added: id_rsa_gitlab (id_rsa_gitlab)
+
+[... .ssh]$ vim config
+# gitlab
+  HOST gitlab.nextcode.pharmatechs.com
+  HostName gitlab.nextcode.pharmatechs.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa_gitlab
+  User genetfp2
+```
+if you want add another,just do it again.
