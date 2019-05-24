@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Install jekyll
-date: 2019-05-13 15:52:24.000000000 +09:00
+date: 2018-05-13
 categories: blog building
-#permalink: /:title
+permalink: /:title
 ---
 Start my blog；
 #### Install RVM
