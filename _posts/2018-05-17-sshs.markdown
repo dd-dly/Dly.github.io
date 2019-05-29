@@ -6,6 +6,7 @@ categories: ENV
 ---
 
 ```bash
+
 [... .ssh]$ ssh-keygen -t rsa -C "usbmount@geneftp2.nextcode.pharmatechs.com"
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/usbmount/.ssh/id_rsa): id_rsa_gitlab
@@ -31,15 +32,34 @@ The key''s randomart image is:
 |  .+o ...        |
 +-----------------+
 
+
 [... .ssh]$ ssh-add id_rsa_gitlab
 Identity added: id_rsa_gitlab (id_rsa_gitlab)
 
+
 [... .ssh]$ vim config
 # gitlab
-  HOST gitlab.nextcode.pharmatechs.com
+  #HOST can use regular expression
+  HOST gitlab.*
+  #HostName must match the Host regular expression,and without port
+  #if the host is ip address,you need add a <Port> param
   HostName gitlab.nextcode.pharmatechs.com
+  #the prefer ssh auth mode
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/id_rsa_gitlab
   User genetfp2
+
+#github
+  Host github
+  HostName github.com
+  IdentityFile ~/.ssh/id_rsa_github
+
+#if you add many ssh keys,you can add the follow config to let password first,
+#if ssh keys first,and match the above keys failed,maybe the auth times will be
+#greater than auth max-time,then you cannot use password auth any more.
+   Host *
+   PubkeyAuthentication no
 ```
+
+
 if you want add another,just do it again.
