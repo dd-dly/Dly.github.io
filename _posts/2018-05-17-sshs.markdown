@@ -54,9 +54,9 @@ Identity added: id_rsa_gitlab (id_rsa_gitlab)
   HostName github.com
   IdentityFile ~/.ssh/id_rsa_github
 
-#if you add many ssh keys,you can add the follow config to let password first,
-#if ssh keys first,and match the above keys failed,maybe the auth times will be
-#greater than auth max-time,then you cannot use password auth any more.
+#if there are many ssh keys,you are suggested to add the follow config to let password first,
+#because if ssh keys first,and match the all above keys failed,the auth times may be
+#greater than auth max-time,and then you cannot use password auth any more.
    Host *
    PubkeyAuthentication no
 ```
