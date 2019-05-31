@@ -2,7 +2,11 @@
 layout: post
 title: manage multiple ssh-keys
 date: 2018-05-17
-categories: ENV
+author: deng liuyan
+header-img: "img/post-bg-2015.jpg"
+catalog: true
+tags:
+    - ENV
 ---
 
 ```bash

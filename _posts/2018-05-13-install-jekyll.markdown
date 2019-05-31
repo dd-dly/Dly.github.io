@@ -1,10 +1,17 @@
 ---
 layout: post
 title: Install jekyll
+subtitle: start my blog
 date: 2018-05-13
-categories: blog building
-permalink: /:title
+author: deng liuyan
+header-img: "img/post-bg-2015.jpg"
+catalog: true
+tags:
+    - blog building
 ---
+
+> “Yeah It's on. ”
+
 Start my blog；
 #### Install RVM
 ```bash

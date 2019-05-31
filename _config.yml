@@ -1,58 +1,115 @@
-# Basic
-title: Welcome
-subtitle: DLY's Blog
-#welcome_message: <a href="https://github.com/onevcat/vno-jekyll" target="_blank">Download the theme</a>
-#description: This is personnal blog.
-creator: <a href="https://github.com/dd-dly">@dly</a>
+# Site settings
+title: Dly Blog
+SEOTitle: 柳燕的博客 | Dly Blog
+header-img: img/home-bg.jpg
+email: xiaodeng341@163.com
+description: "关于程序与设计、黑客与画家 | 黄玄，Web & Mobile Lover，Software Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。"
+keyword: "liuyan, Dly Blog, python, django, Web, JavaScript, 前端, 设计,微信小程序"
+url: "https://github.com/dd-dly"              # your host, for absolute URL
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
-url: "https://github.com/dd-dly/dd-dly.github.io"
+# Publish posts or collection documents with a future date.
+future: true
 
-permalink: /:year/:month/:title/
+# SNS settings
+RSS: false
+weibo_username:     false
+zhihu_username:     Azalea
+github_username:    dd-dly
+twitter_username:   false
+#facebook_username:  huxpro
+#linkedin_username:  firstname-lastname-idxxxx
 
-defaults:
-  -
-    scope:
-      path: ""
-    values:
-      layout: "posts"
-      title: "DLY Blog"
 
-# Format
+
+# Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 highlighter: rouge
+permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+# If you have timezone issue (e.g. #68) in China, uncomment to use this:
+#timezone: CN  
 
-# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
-cover_color: green
 
-# The blog button should not be removed.
-blog_button:
-    title: Blog
-    description: Visit blog
 
-# Navigation buttons in the front page.
-nav:
-    - {title: Github, description: My Github, url: 'https://github.com/dd-dly/dd-dly.github.io'}
-    # - {title: Another Button, description: A button, url: 'http://example.com'}
-
-# Pagination
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+# make sure you have this gem installed
+# `$ gem install jekyll-paginate`
 plugins: [jekyll-paginate]
-paginate: 5
-paginate_path: "page/:num/"
 
-# Comment
-comment:
-    disqus: dly
-    # duoshuo: 
-    
-# Social
-social:
-#    weibo: onevcat
-    github: dd-dly
-#    twitter: onevcat
-#    gplus: 107108267983477358170
-    mail: xiaodeng341@163.com
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+
+
+# Disqus settings
+disqus_username: dly
+
+# Netease settings
+netease_comment: false
+
+
+
+# Analytics settings
+# Baidu Analytics 
+# ba_track_id: [your track id]
 
 # Google Analytics
-ga:
-    # id: your_ga_id
-    # host: your_host
-theme: jekyll-theme-leap-day
+#ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+#ga_domain: huangxuan.me
+
+
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "Fortune favors the brave<br>生而伟大"
+sidebar-avatar: /img/me.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+
+
+# MathJax rendering for layout:page (e.g. post preview)
+page-mathjax: false
+
+
+
+# Friends
+friends: [
+    {
+        title: "zhao_yu",
+        href: "https://monkey-yu.github.io/"
+    },{
+        title: "nan_cunpei",
+        href: "https://www.kopei.top/"
+    },{
+        title: "fu_pinyou",
+        href: "http://blog.neulana.com/"
+    }
+]

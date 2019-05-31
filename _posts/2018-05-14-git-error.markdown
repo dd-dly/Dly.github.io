@@ -2,7 +2,11 @@
 layout: post
 title: Fix git push error in pycharm or other IDE
 date: 2018-05-14
-categories: ENV
+author: deng liuyan
+header-img: "img/post-bg-2015.jpg"
+catalog: true
+tags:
+    - ENV
 ---
 
 
