@@ -3,7 +3,7 @@ title: Dly Blog
 SEOTitle: 柳燕的博客 | Dly Blog
 header-img: img/home-bg.jpg
 email: xiaodeng341@163.com
-description: "关于程序与设计、黑客与画家 | 黄玄，Web & Mobile Lover，Software Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。"
+description: "关于程序与设计 | 柳燕，Software Engineer"
 keyword: "liuyan, Dly Blog, python, django, Web, JavaScript, 前端, 设计,微信小程序"
 url: "https://github.com/dd-dly"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
