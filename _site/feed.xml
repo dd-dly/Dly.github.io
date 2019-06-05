@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dly Blog</title>
-    <description>关于程序与设计、黑客与画家 | 黄玄，Web &amp; Mobile Lover，Software Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。</description>
+    <description>关于程序与设计 | 柳燕，Software Engineer</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 04 Jun 2019 11:41:11 +0800</pubDate>
-    <lastBuildDate>Tue, 04 Jun 2019 11:41:11 +0800</lastBuildDate>
+    <pubDate>Wed, 05 Jun 2019 14:57:11 +0800</pubDate>
+    <lastBuildDate>Wed, 05 Jun 2019 14:57:11 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -66,14 +66,18 @@ those ppts is just for letting teammates know about some skills that i know,so  
         <link>http://localhost:4000/2018/06/07/work-ppts/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/06/07/work-ppts/</guid>
         
-        <category>experience</category>
+        <category>Experience</category>
         
         
       </item>
     
       <item>
         <title>manage multiple ssh-keys</title>
-        <description>&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+        <description>&lt;h4 id=&quot;environment-config&quot;&gt;Environment config&lt;/h4&gt;
+
+&lt;p&gt;when you start your work environment,manage mutilple ssh keys is important just like keep your home key safe,using mutilple ssh keys to match different systems,such as gitlab,github,personal keys,work keys.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
 4
@@ -125,9 +129,7 @@ those ppts is just for letting teammates know about some skills that i know,so  
 50
 51
 52
-53
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;... .ssh]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh-keygen &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; rsa &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;usbmount@geneftp2.nextcode.pharmatechs.com&quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;... .ssh]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh-keygen &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; rsa &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;usbmount@geneftp2.nextcode.pharmatechs.com&quot;&lt;/span&gt;
 Generating public/private rsa key pair.
 Enter file &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;which to save the key &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;/home/usbmount/.ssh/id_rsa&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: id_rsa_gitlab
 Enter passphrase &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;empty &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;no passphrase&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:
@@ -211,11 +213,7 @@ Identity added: id_rsa_gitlab &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;id_r
     
       <item>
         <title>Install jekyll</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;“Yeah It’s on. ”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Start my blog；&lt;/p&gt;
+        <description>&lt;p&gt;Start my blog；&lt;/p&gt;
 &lt;h4 id=&quot;install-rvm&quot;&gt;Install RVM&lt;/h4&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
@@ -254,7 +252,7 @@ gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jekyll
         <link>http://localhost:4000/2018/05/13/install-jekyll/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/05/13/install-jekyll/</guid>
         
-        <category>blog building</category>
+        <category>Blog</category>
         
         
       </item>

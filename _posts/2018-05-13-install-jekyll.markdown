@@ -7,10 +7,9 @@ author: deng liuyan
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - blog building
+    - Blog
 ---
 
-> “Yeah It's on. ”
 
 Start my blog；
 #### Install RVM

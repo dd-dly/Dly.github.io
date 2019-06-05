@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="description" content="关于程序与设计、黑客与画家 | 黄玄，Web & Mobile Lover，Software Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。">
+    <meta name="description" content="关于程序与设计 | 柳燕，Software Engineer">
     <meta name="keywords"  content="liuyan, Dly Blog, python, django, Web, JavaScript, 前端, 设计,微信小程序">
     <meta name="theme-color" content="#000000">
     
@@ -14,7 +14,7 @@
     <meta property="og:title" content="manage multiple ssh-keys - 柳燕的博客 | Dly Blog">
     
     <meta property="og:type" content="article">
-    <meta property="og:description" content="```bash
+    <meta property="og:description" content="Environment config
 
 ">
     
@@ -27,7 +27,7 @@
     <meta property="article:tag" content="ENV">
     
     
-    <meta property="og:image" content="http://localhost:4000/img/me.jpg">
+    <meta property="og:image" content="http://localhost:4000img/me.jpg">
     <meta property="og:url" content="http://localhost:4000/2018/05/17/sshs/">
     <meta property="og:site_name" content="柳燕的博客 | Dly Blog">
     
@@ -234,7 +234,11 @@
                 <!-- Multi-Lingual -->
                 
 
-				<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+				<h4 id="environment-config">Environment config</h4>
+
+<p>when you start your work environment,manage mutilple ssh keys is important just like keep your home key safe,using mutilple ssh keys to match different systems,such as gitlab,github,personal keys,work keys.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -286,9 +290,7 @@
 50
 51
 52
-53
-</pre></td><td class="rouge-code"><pre>
-<span class="o">[</span>... .ssh]<span class="nv">$ </span>ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-C</span> <span class="s2">"usbmount@geneftp2.nextcode.pharmatechs.com"</span>
+</pre></td><td class="rouge-code"><pre><span class="o">[</span>... .ssh]<span class="nv">$ </span>ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-C</span> <span class="s2">"usbmount@geneftp2.nextcode.pharmatechs.com"</span>
 Generating public/private rsa key pair.
 Enter file <span class="k">in </span>which to save the key <span class="o">(</span>/home/usbmount/.ssh/id_rsa<span class="o">)</span>: id_rsa_gitlab
 Enter passphrase <span class="o">(</span>empty <span class="k">for </span>no passphrase<span class="o">)</span>:
@@ -416,10 +418,20 @@ Identity added: id_rsa_gitlab <span class="o">(</span>id_rsa_gitlab<span class="
         </a>
         
         
+                <a data-sort="0003" 
+                    href="/archive/?tag=Blog"
+                    title="Blog"
+                    rel="1">Blog</a>
+        
                 <a data-sort="0002" 
                     href="/archive/?tag=ENV"
                     title="ENV"
-                    rel="2">ENV
+                    rel="2">ENV</a>
+        
+                <a data-sort="0003" 
+                    href="/archive/?tag=Experience"
+                    title="Experience"
+                    rel="1">Experience
     </div>
 </section>
 
@@ -619,21 +631,6 @@ Identity added: id_rsa_gitlab <span class="o">(</span>id_rsa_gitlab<span class="
 
 
 <!-- Google Analytics -->
-
-<script>
-    // dynamic User by Hux
-    var _gaId = 'UA-49627206-1';
-    var _gaDomain = 'huangxuan.me';
-
-    // Originial
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', _gaId, _gaDomain);
-    ga('send', 'pageview');
-</script>
 
 
 
