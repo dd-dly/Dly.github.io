@@ -5,9 +5,156 @@
     <description>关于程序与设计 | 柳燕，Software Engineer</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 13 Jun 2019 16:04:09 +0800</pubDate>
-    <lastBuildDate>Thu, 13 Jun 2019 16:04:09 +0800</lastBuildDate>
+    <pubDate>Fri, 14 Jun 2019 15:09:10 +0800</pubDate>
+    <lastBuildDate>Fri, 14 Jun 2019 15:09:10 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Vim</title>
+        <description>&lt;p&gt;首先编辑vimrc，一般编辑用户级vimrc进行vim通用设置。&lt;/p&gt;
+
+&lt;h4 id=&quot;vimrc&quot;&gt;vimrc&lt;/h4&gt;
+
+&lt;p&gt;vim ~/.vimrc&lt;/p&gt;
+
+&lt;div class=&quot;language-vim highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;&quot; you can add vim config here&lt;/span&gt;
+syntax enable
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; background&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dark&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;colorscheme&lt;/span&gt; solarized
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; nocompatible
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;number&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; ruler
+&lt;span class=&quot;c&quot;&gt;&quot; highlight search matches&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; hlsearch
+&lt;span class=&quot;c&quot;&gt;&quot; enable incremental searching&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; incsearch
+&lt;span class=&quot;c&quot;&gt;&quot; set ignorecase when searching&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; ignorecase
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; smartcase
+&lt;span class=&quot;c&quot;&gt;&quot; turn on file backups&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; backup
+&lt;span class=&quot;c&quot;&gt;&quot; don't line wrap mid-word&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; lbr
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; autoindent
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; smartindent
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; expandtab
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; smartindent
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; shiftwidth&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; tabstop&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot; display the incomplete commands in the bottom right-side screen&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; showcmd
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; wildmenu
+&lt;span class=&quot;c&quot;&gt;&quot; set shortcut key&lt;/span&gt;
+map &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;F3&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;ul&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;CR&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;space&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;space&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;li&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/li&amp;gt;&amp;lt;CR&amp;gt;&amp;lt;Esc&amp;gt;I&amp;lt;/&lt;/span&gt;ul&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;Esc&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;Kcit
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;四种模式&quot;&gt;四种模式&lt;/h4&gt;
+
+&lt;h5 id=&quot;简单模式&quot;&gt;简单模式&lt;/h5&gt;
+
+&lt;p&gt;移查删改&lt;/p&gt;
+
+&lt;h5 id=&quot;可视化模式&quot;&gt;可视化模式&lt;/h5&gt;
+
+&lt;p&gt;对整块区域进行操作，如整体注释&lt;/p&gt;
+
+&lt;h5 id=&quot;插入模式&quot;&gt;插入模式&lt;/h5&gt;
+
+&lt;h5 id=&quot;命令模式&quot;&gt;命令模式&lt;/h5&gt;
+
+&lt;h4 id=&quot;常用命令&quot;&gt;常用命令&lt;/h4&gt;
+&lt;h5 id=&quot;复制粘贴删除&quot;&gt;复制粘贴删除&lt;/h5&gt;
+&lt;p&gt;dd：剪切当前行，delete
+ndd：n表示大于1的数字，剪切n行 
+d$：从当前光标剪切到行末 
+d0：从当前光标位置（不包括光标位置）剪切之行首
+dw: 删除一个单词
+yy：复制当前行,yank
+p/P:粘贴在光标后／前，paste或者put&lt;/p&gt;
+&lt;h5 id=&quot;跳转&quot;&gt;跳转&lt;/h5&gt;
+&lt;p&gt;w/W:  跳转单词首字母，word
+b/B: 反跳转，backward
+e/E: 跳转单词最后一个字母，end
+ge： 反跳转单词最后一个字母&lt;/p&gt;
+
+&lt;p&gt;NG → 到第 N 行 （陈皓注：注意命令中的G是大写的，另我一般使用 : N 到第N行，如 :137 到第137行） 
+gg → 到第一行。（陈皓注：相当于1G，或 :1） 
+G → 到最后一行。&lt;/p&gt;
+
+&lt;h5 id=&quot;查找&quot;&gt;查找&lt;/h5&gt;
+
+&lt;p&gt;/{char}：命令行查找
+dt{char}:删除光标与查找字符间的字符
+F/f{char}:反向／正向查找单个字符
+t{char}：查找字符的前一个字符&lt;/p&gt;
+
+&lt;p&gt;% : 匹配括号移动，包括 (, {, [. （你需要把光标先移到括号上） 
+* 和 #:  匹配光标当前所在的单词，移动光标到下一个（或上一个）匹配单词（*是下一个，#是上一个）&lt;/p&gt;
+&lt;h5 id=&quot;替换&quot;&gt;替换&lt;/h5&gt;
+&lt;p&gt;s/go/roll/g:当前行所有go替换成roll
+%s/go/roll/g:所有go替换成roll
+shift+r/R:替换模式&lt;/p&gt;
+
+&lt;h5 id=&quot;缩进&quot;&gt;缩进&lt;/h5&gt;
+&lt;p&gt;:3,231&amp;gt; : 第3行到第231行缩进
+&amp;lt;反缩进&lt;/p&gt;
+
+&lt;h5 id=&quot;注释&quot;&gt;注释&lt;/h5&gt;
+&lt;p&gt;多行注释： 
+\1. 进入命令行模式，按ctrl + v进入 visual block模式（可视快模式），然后按j, 或者k选中多行，把需要注释的行标记起来 
+\2. 按大写字母i，再插入注释符，例如// 
+\3. 按esc键就会全部注释了（我的是按两下） 
+取消多行注释： 
+\1. 进入命令行模式，按ctrl + v进入 visual block模式（可视快模式），按小写字母L横向选中列的个数，例如 // 需要选中2列 
+\2. 按字母j，或者k选中注释符号 
+\3. 按d键就可全部取消注释&lt;/p&gt;
+
+&lt;h5 id=&quot;寄存器&quot;&gt;寄存器&lt;/h5&gt;
+&lt;p&gt;:reg 查看寄存器
+无名寄存器：最后一条指令
+数字寄存器：缓存最近10次，0是复制专用
+有名寄存器：”ayy，复制这一行内容存入a寄存器
+黑洞寄存器&lt;/p&gt;
+</description>
+        <pubDate>Thu, 05 Jul 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/07/05/vim/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/07/05/vim/</guid>
+        
+        <category>ENV</category>
+        
+        <category>Skill</category>
+        
+        
+      </item>
     
       <item>
         <title>Nginx</title>
