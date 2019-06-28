@@ -5,9 +5,357 @@
     <description>关于程序与设计 | 柳燕，Software Engineer</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 17 Jun 2019 16:03:14 +0800</pubDate>
-    <lastBuildDate>Mon, 17 Jun 2019 16:03:14 +0800</lastBuildDate>
+    <pubDate>Fri, 28 Jun 2019 13:53:54 +0800</pubDate>
+    <lastBuildDate>Fri, 28 Jun 2019 13:53:54 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Docker</title>
+        <description>&lt;h4 id=&quot;docker的主要用途&quot;&gt;docker的主要用途&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;提供一次性的环境。&lt;/strong&gt;比如，本地测试他人的软件、持续集成的时候提供单元测试和构建的环境。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;提供弹性的云服务。&lt;/strong&gt;因为 Docker 容器可以随开随关，很适合动态扩容和缩容。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;组建微服务架构。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;docker-principle&quot;&gt;docker principle&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;Linux 容器的一种封装，提供简单易用的容器使用接口&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;需要用户具有 sudo 权限&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;服务器—-客户端架构&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;docker-using&quot;&gt;docker using&lt;/h4&gt;
+
+&lt;p&gt;可docker hub里抓取images；&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;docker image pull &lt;span class=&quot;k&quot;&gt;***&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;如mysql docker及redis docker&lt;/p&gt;
+
+&lt;h4 id=&quot;新建dockerignore&quot;&gt;新建.dockerignore&lt;/h4&gt;
+
+&lt;p&gt;里面填写的路径要排除，不打包进入 image 文件&lt;/p&gt;
+
+&lt;h4 id=&quot;创建-dockerfile-文件生成image&quot;&gt;创建 Dockerfile 文件生成image&lt;/h4&gt;
+
+&lt;p&gt;如下例子：&lt;/p&gt;
+
+&lt;div class=&quot;language-dockerfile highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;＃继承image,也可继承官方的image，建议先pull下来
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; django:1.9.6-python2&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;MAINTAINER&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; Liuyan Deng &amp;lt;deng_liuyan@wuxiapptec.com&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#设置环境变量代理&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#ENV HTTP_PROXY http://172.31.100.10:43128&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#ENV HTTPS_PROXY http://172.31.100.10:43128&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#ENV FTP_PROXY http://172.31.100.10:43128&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#ENV http_proxy http://172.31.100.10:43128&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#ENV https_proxy http://172.31.100.10:43128&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#ENV ftp_proxy http://172.31.100.10:43128&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#ENV NO_PROXY 10.111.6.*,localhost&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; environment test&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak &amp;amp;&amp;amp; \&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#    echo &quot;deb http://mirrors.163.com/debian/ jessie main non-free contrib&quot; &amp;gt;/etc/apt/sources.list &amp;amp;&amp;amp; \&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#    echo &quot;deb http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib&quot; &amp;gt;&amp;gt;/etc/apt/sources.list &amp;amp;&amp;amp; \&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#    echo &quot;deb-src http://mirrors.163.com/debian/ jessie main non-free contrib&quot; &amp;gt;&amp;gt;/etc/apt/sources.list &amp;amp;&amp;amp; \&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#    echo &quot;deb-src http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib&quot; &amp;gt;&amp;gt;/etc/apt/sources.list&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;apt-get update &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt-get &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;        ca-certificates &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;        g++ &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;        gettext &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;        libaio1 libaio-dev &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;        unzip &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;        libffi-dev &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;        gettext-base &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;        gettext-base &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;        redis-server &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;        libffi-dev &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;        vim &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;        cron &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;        curl &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;        libsasl2-dev &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;        libldap2-dev &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;        libssl-dev &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;        &lt;span class=&quot;nt&quot;&gt;--no-install-recommends&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; /var/lib/apt/lists/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;ADD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; instantclient-basic-linux.x64-11.2.0.4.0.zip /opt/&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ADD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; instantclient-sdk-linux.x64-11.2.0.4.0.zip /opt/&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ADD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; jdk-8u121-linux-x64.tar /opt/&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ADD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; requirements.txt /opt/&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; /usr/lib/jvm
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cp&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; /opt/jdk1.8.0_121 /usr/lib/jvm
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_121&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;~/.bashrc
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;export JRE_HOME=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JAVA_HOME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/jre&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;~/.bashrc
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;export CLASSPATH=.:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JAVA_HOME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/lib:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JRE_HOME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/lib&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;~/.bashrc
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;export PATH=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JAVA_HOME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/bin:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;~/.bashrc
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;/bin/bash &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;source ~/.bashrc&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;update-alternatives &lt;span class=&quot;nt&quot;&gt;--install&lt;/span&gt; /usr/bin/java java /usr/lib/jvm/jdk1.8.0_121/bin/java 300
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;update-alternatives &lt;span class=&quot;nt&quot;&gt;--install&lt;/span&gt; /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_121/bin/javac 300
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;update-alternatives &lt;span class=&quot;nt&quot;&gt;--install&lt;/span&gt; /usr/bin/jar jar /usr/lib/jvm/jdk1.8.0_121/bin/jar 300
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;update-alternatives &lt;span class=&quot;nt&quot;&gt;--install&lt;/span&gt; /usr/bin/javah javah /usr/lib/jvm/jdk1.8.0_121/bin/javah 300
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;update-alternatives &lt;span class=&quot;nt&quot;&gt;--install&lt;/span&gt; /usr/bin/javap javap /usr/lib/jvm/jdk1.8.0_121/bin/javap 300
+
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /opt &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; unzip instantclient-basic-linux.x64-11.2.0.4.0.zip &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;    unzip instantclient-sdk-linux.x64-11.2.0.4.0.zip &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;    &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /opt/instantclient_11_2 &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\
+&lt;/span&gt;    &lt;span class=&quot;nb&quot;&gt;ln&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; libclntsh.so.11.1 libclntsh.so
+
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; ORACLE_HOME /opt/instantclient_11_2&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; DYLD_LIBRARY_PATH /opt/instantclient_11_2&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; LD_LIBRARY_PATH /opt/instantclient_11_2&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#RUN pip install --upgrade pip&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; /opt/requirements.txt
+
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; DB_NAME1 tmp&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; DB_NAME2 tmp&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; DB_USER1 tmp&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; DB_USER2 tmp&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; DB_PASSWORD1 tmp&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; DB_PASSWORD2 tmp&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; DB_HOST1 tmp&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; DB_HOST2 tmp&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; DB_PORT1 tmp&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; DB_PORT2 tmp&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; USERNAME tmp&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; PASSWORD tmp&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; JOBNAME tmp&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; CSA_USERNAME tmp&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; CSA_PASSWORD tmp&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; REDIS redis://10.80.121.35:6370&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Asia/Shanghai&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; /etc/timezone
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;dpkg-reconfigure &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; noninteractive tzdata
+
+&lt;span class=&quot;k&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; /opt/lims_ext/&lt;/span&gt;
+
+＃添加当前文件夹入docker，也可在docker run的时候通过-v映射，这样可直接reload更新代码
+#ADD api api/
+#ADD clinic clinic/
+#ADD flowcell flowcell/
+#ADD lims lims/
+#ADD lims_ext lims_ext/
+#ADD media media/
+#ADD project project/
+#ADD sample sample/
+#ADD static static/
+#ADD status status/
+#ADD templates templates/
+#ADD manage.py manage.py
+
+&lt;span class=&quot;k&quot;&gt;ADD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; resources/uwsgi/supervisord.conf /etc/supervisord.conf&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ADD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; resources/uwsgi/limsext_uwsgi.ini /opt/limsext_uwsgi.ini&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ADD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; resources/uwsgi/celerybeat.conf /etc/celerybeat.conf&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ADD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; resources/uwsgi/run-app.sh /run-app.sh&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;chmod &lt;/span&gt;u+x /run-app.sh
+
+&lt;span class=&quot;k&quot;&gt;VOLUME&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; /media&lt;/span&gt;
+
+＃将容器 9090 端口暴露出来， 允许外部连接这个端口
+&lt;span class=&quot;k&quot;&gt;EXPOSE&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; 9090&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# run celery by root&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; C_FORCE_ROOT true&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; /opt/log
+
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;CMD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; /run-app.sh&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;docker-command&quot;&gt;docker command&lt;/h4&gt;
+
+&lt;h5 id=&quot;docker-image-build&quot;&gt;docker image build&lt;/h5&gt;
+
+&lt;p&gt;-t&lt;code class=&quot;highlighter-rouge&quot;&gt;参数用来指定 image 文件的名字，后面还可以用冒号指定标签。如果不指定，默认的标签就是&lt;/code&gt;latest`。最后的那个点表示 Dockerfile 文件所在的路径&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;docker image build &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; koa-demo:0.0.1 &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;docker-images&quot;&gt;docker images&lt;/h5&gt;
+
+&lt;p&gt;-a 参数表示显示隐藏image&lt;/p&gt;
+
+&lt;h5 id=&quot;docker-container-run&quot;&gt;docker container run&lt;/h5&gt;
+
+&lt;p&gt;-p: 端口映射&lt;/p&gt;
+
+&lt;p&gt;-e: 设置环境变量&lt;/p&gt;
+
+&lt;p&gt;-v：路径映射&lt;/p&gt;
+
+&lt;p&gt;—name: container name&lt;/p&gt;
+
+&lt;p&gt;—tmpfs:临时文件系统&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 9091:9090 &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;DB_NAME1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;lims &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;DB_USER1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;limsext &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;DB_PASSWORD1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;mrcf4034vpfr &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;DB_HOST1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;10.80.121.169 &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;DB_PORT1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1521  &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;DB_NAME2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;lims &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;DB_USER2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;clinical &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;DB_PASSWORD2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;qgJK2277 &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;DB_HOST2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;10.80.121.169 &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;DB_PORT2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1521 &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;USERNAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;lims-ext &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1234qwer &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;JOBNAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;limsext_sample_merge_production &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;REDIS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;redis://10.111.6.5:6379 &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;CSA_USERNAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;huang_wenhui@wuxiapptec.com &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;CSA_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Huang_wenhui@123456 &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;production &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;NO_PROXY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;10.111.6.2,10.111.6.5,10.111.6.4,localhost&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /home/lims-ext/media:/media &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /home/lims-ext/limsext-backend:/opt/lims_ext &lt;span class=&quot;nt&quot;&gt;--tmpfs&lt;/span&gt; /var/tmp/ &lt;span class=&quot;nt&quot;&gt;--tmpfs&lt;/span&gt; /tmp/ &lt;span class=&quot;nt&quot;&gt;--tmpfs&lt;/span&gt; /run/ &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; lims_ext_uwsgi_container lims_ext_uwsgi
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;docker--iptables&quot;&gt;docker &amp;amp; iptables&lt;/h4&gt;
+
+&lt;p&gt;容器之间相互访问，需要两方面的支持。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;容器的网络拓扑是否已经互联。默认情况下，所有容器都会被连接到 &lt;code class=&quot;highlighter-rouge&quot;&gt;docker0&lt;/code&gt; 网桥上。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;本地系统的防火墙软件 – &lt;code class=&quot;highlighter-rouge&quot;&gt;iptables&lt;/code&gt; 是否允许通过。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;访问所有端口&lt;/p&gt;
+
+&lt;p&gt;当启动 Docker 服务（即 dockerd）的时候，默认会添加一条转发策略到本地主机 iptables 的 FORWARD 链上。策略为通过（&lt;code class=&quot;highlighter-rouge&quot;&gt;ACCEPT&lt;/code&gt;）还是禁止（&lt;code class=&quot;highlighter-rouge&quot;&gt;DROP&lt;/code&gt;）取决于配置&lt;code class=&quot;highlighter-rouge&quot;&gt;--icc=true&lt;/code&gt;（缺省值）还是 &lt;code class=&quot;highlighter-rouge&quot;&gt;--icc=false&lt;/code&gt;。当然，如果手动指定 &lt;code class=&quot;highlighter-rouge&quot;&gt;--iptables=false&lt;/code&gt; 则不会添加 &lt;code class=&quot;highlighter-rouge&quot;&gt;iptables&lt;/code&gt; 规则。&lt;/p&gt;
+
+&lt;p&gt;可见，默认情况下，不同容器之间是允许网络互通的。如果为了安全考虑，可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/docker/daemon.json&lt;/code&gt; 文件中配置 &lt;code class=&quot;highlighter-rouge&quot;&gt;{&quot;icc&quot;: false}&lt;/code&gt; 来禁止它。&lt;/p&gt;
+
+&lt;p&gt;iptables -nL :查看当前系统的规则&lt;/p&gt;
+</description>
+        <pubDate>Sat, 28 Jul 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/07/28/docker/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/07/28/docker/</guid>
+        
+        <category>ENV</category>
+        
+        <category>Skill</category>
+        
+        
+      </item>
     
       <item>
         <title>Vim</title>
