@@ -5,9 +5,120 @@
     <description>关于程序与设计 | 柳燕，Software Engineer</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 28 Jun 2019 13:53:54 +0800</pubDate>
-    <lastBuildDate>Fri, 28 Jun 2019 13:53:54 +0800</lastBuildDate>
+    <pubDate>Mon, 01 Jul 2019 13:33:41 +0800</pubDate>
+    <lastBuildDate>Mon, 01 Jul 2019 13:33:41 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>nginx 502 bad gateway error</title>
+        <description>&lt;p&gt;请原谅我接下来可能要用不太平和的语气讲述下这段不太顺心的解bug之旅。&lt;/p&gt;
+
+&lt;h4 id=&quot;前奏&quot;&gt;前奏：&lt;/h4&gt;
+
+&lt;p&gt;​		我开发的网站之前一切都顺畅，测试环境和release环境都用过很久没有出现如此不稳定，有一段时间没用过后，最近项目上突然急用，当我默认它很稳定，跟领导保证更新一个功能1个小时就完成后，事情就发生了。&lt;/p&gt;
+
+&lt;p&gt;​		接着我开启解bug之旅，然后我用了一天解完，期间领导半个小时过来问一次，问到后面我已经心虚的不敢回答了……&lt;/p&gt;
+
+&lt;h4 id=&quot;bug描述&quot;&gt;bug描述：&lt;/h4&gt;
+&lt;p&gt;​		无故会出现无法连接此网站，然后又无故好了，如此循环,可以看到iptables中docker映射端口会无缘无故missing.&lt;/p&gt;
+
+&lt;p&gt;​		无故会出现502 bad gateway,后台看docker logs就是下面这个问题，然后又无故好了，如此循环；&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;2019/06/26 16:43:11 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;error] 457#457: &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;20 recv&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; failed &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;104: Connection reset by peer&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;while &lt;/span&gt;reading response header from upstream, client: 10.21.242.68, server: proxy, request: &lt;span class=&quot;s2&quot;&gt;&quot;GET /admin/ HTTP/1.1&quot;&lt;/span&gt;, upstream: &lt;span class=&quot;s2&quot;&gt;&quot;uwsgi://10.80.121.35:9093&quot;&lt;/span&gt;, host: &lt;span class=&quot;s2&quot;&gt;&quot;10.80.121.35:1118&quot;&lt;/span&gt;, referrer: &lt;span class=&quot;s2&quot;&gt;&quot;http://10.80.121.35:1119/&quot;&lt;/span&gt;
+2019/06/26 16:43:11 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;warn] 457#457: &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;20 upstream server temporarily disabled &lt;span class=&quot;k&quot;&gt;while &lt;/span&gt;reading response header from upstream, client: 10.21.242.68, server: proxy, request: &lt;span class=&quot;s2&quot;&gt;&quot;GET /admin/ HTTP/1.1&quot;&lt;/span&gt;, upstream: &lt;span class=&quot;s2&quot;&gt;&quot;uwsgi://10.80.121.35:9093&quot;&lt;/span&gt;, host: &lt;span class=&quot;s2&quot;&gt;&quot;10.80.121.35:1118&quot;&lt;/span&gt;, referrer: &lt;span class=&quot;s2&quot;&gt;&quot;http://10.80.121.35:1119/&quot;&lt;/span&gt;
+10.21.242.68 - - &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;26/Jun/2019:16:43:11 +0800] &lt;span class=&quot;s2&quot;&gt;&quot;GET /admin/ HTTP/1.1&quot;&lt;/span&gt; 502 575 &lt;span class=&quot;s2&quot;&gt;&quot;http://10.80.121.35:1119/&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;-&quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;尝试解决方法&quot;&gt;尝试解决方法&lt;/h4&gt;
+
+&lt;h5 id=&quot;增加nginx-各种buffer-size增加各种timeout&quot;&gt;增加nginx 各种buffer size，增加各种timeout&lt;/h5&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;proxy_connect_timeout 180&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+proxy_send_timeout 180&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+proxy_read_timeout 180&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+proxy_buffer_size 8k&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+proxy_buffers 4 64k&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+proxy_busy_buffers_size 128k&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+proxy_temp_file_write_size 128k
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;增加nginx-server-配置里max_failsfail_timeout&quot;&gt;增加nginx server 配置里max_fails,fail_timeout&lt;/h5&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;upstream backend_server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    server 192.168.61.1:9080 &lt;span class=&quot;nv&quot;&gt;max_fails&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2 &lt;span class=&quot;nv&quot;&gt;fail_timeout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;10s &lt;span class=&quot;nv&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    server 192.168.61.1:9090 &lt;span class=&quot;nv&quot;&gt;max_fails&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2 &lt;span class=&quot;nv&quot;&gt;fail_timeout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;10s &lt;span class=&quot;nv&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;增加与后端的长连接&quot;&gt;增加与后端的长连接&lt;/h5&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;upstream  backend_server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    server 192.168.61.1:9080 &lt;span class=&quot;nv&quot;&gt;max_fails&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2 &lt;span class=&quot;nv&quot;&gt;fail_timeout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;10s &lt;span class=&quot;nv&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    server 192.168.61.1:9090 &lt;span class=&quot;nv&quot;&gt;max_fails&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2 &lt;span class=&quot;nv&quot;&gt;fail_timeout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;10s &lt;span class=&quot;nv&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    keepalive 300&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;    
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        location /  &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            proxy_http_version 1.1&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; // 这两个最好也设置
+            proxy_set_header Connection &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;重启dockernginx&quot;&gt;重启docker，nginx；&lt;/h5&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;docker restart &lt;span class=&quot;k&quot;&gt;*****&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+nginx &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; reload&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h5 id=&quot;uwsgi-ini-buffer-size设为最大&quot;&gt;uwsgi .ini buffer-size设为最大；&lt;/h5&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;buffer-size     &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 65535
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;重点是以上皆失败。&lt;/p&gt;
+
+&lt;h4 id=&quot;最终解决方式&quot;&gt;最终解决方式&lt;/h4&gt;
+
+&lt;p&gt;引入了传说中重来一次大法，直接在之前的image上重新run了一个docker，一切皆解决了…….哭哭……..&lt;/p&gt;
+</description>
+        <pubDate>Wed, 01 Aug 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/08/01/502-bad-gateway/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/08/01/502-bad-gateway/</guid>
+        
+        <category>ENV</category>
+        
+        <category>Skill</category>
+        
+        
+      </item>
     
       <item>
         <title>Docker</title>
