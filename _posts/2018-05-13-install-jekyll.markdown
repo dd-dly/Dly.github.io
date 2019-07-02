@@ -4,7 +4,7 @@ title: Install jekyll
 subtitle: start my blog
 date: 2018-05-13
 author: deng liuyan
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/art.jpg"
 catalog: true
 tags:
     - Blog
