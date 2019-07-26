@@ -17,7 +17,7 @@ when you start your work environment,manage mutilple ssh keys is important just 
 
 
 ```bash
-[... .ssh]$ ssh-keygen -t rsa -C "usbmount@geneftp2.nextcode.pharmatechs.com"
+[... .ssh]$ ssh-keygen -t rsa -C "****"
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/usbmount/.ssh/id_rsa): id_rsa_gitlab
 Enter passphrase (empty for no passphrase):
@@ -25,7 +25,7 @@ Enter same passphrase again:
 Your identification has been saved in id_rsa_gitlab.
 Your public key has been saved in id_rsa_gitlab.pub.
 The key fingerprint is:
-3a:fe:c4:1c:48:af:2a:f1:a1:fb:94:21:b6:c1:23:54 usbmount@geneftp2.nextcode.pharmatechs.com
+3a:fe:c4:1c:48:af:2a:f1:a1:fb:94:21:b6:c1:23:54 ***
 The key''s randomart image is:
 +--[ RSA 2048]----+
 |   E             |
@@ -53,7 +53,7 @@ Identity added: id_rsa_gitlab (id_rsa_gitlab)
   HOST gitlab.*
   #HostName must match the Host regular expression,and without port
   #if the host is ip address,you need add a <Port> param
-  HostName gitlab.nextcode.pharmatechs.com
+  HostName ****
   #the prefer ssh auth mode
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/id_rsa_gitlab

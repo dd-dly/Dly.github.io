@@ -5,8 +5,8 @@
     <description>关于程序与设计 | 柳燕，Software Engineer</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 19 Jul 2019 16:25:54 +0800</pubDate>
-    <lastBuildDate>Fri, 19 Jul 2019 16:25:54 +0800</lastBuildDate>
+    <pubDate>Fri, 19 Jul 2019 16:26:07 +0800</pubDate>
+    <lastBuildDate>Fri, 19 Jul 2019 16:26:07 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -1265,7 +1265,7 @@ those ppts is just for letting teammates know about some skills that i know,so  
 50
 51
 52
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;... .ssh]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh-keygen &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; rsa &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;usbmount@geneftp2.nextcode.pharmatechs.com&quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;... .ssh]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh-keygen &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; rsa &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;usbmount@geneftp2.***&quot;&lt;/span&gt;
 Generating public/private rsa key pair.
 Enter file &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;which to save the key &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;/home/usbmount/.ssh/id_rsa&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: id_rsa_gitlab
 Enter passphrase &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;empty &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;no passphrase&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:
@@ -1273,7 +1273,7 @@ Enter same passphrase again:
 Your identification has been saved &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;id_rsa_gitlab.
 Your public key has been saved &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;id_rsa_gitlab.pub.
 The key fingerprint is:
-3a:fe:c4:1c:48:af:2a:f1:a1:fb:94:21:b6:c1:23:54 usbmount@geneftp2.nextcode.pharmatechs.com
+3a:fe:c4:1c:48:af:2a:f1:a1:fb:94:21:b6:c1:23:54 usbmount@geneftp2.***
 The key&lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;s randomart image is:
 +--[ RSA 2048]----+
 |   E             |
@@ -1301,7 +1301,7 @@ Identity added: id_rsa_gitlab &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;id_r
   HOST gitlab.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
   &lt;span class=&quot;c&quot;&gt;#HostName must match the Host regular expression,and without port&lt;/span&gt;
   &lt;span class=&quot;c&quot;&gt;#if the host is ip address,you need add a &amp;lt;Port&amp;gt; param&lt;/span&gt;
-  HostName gitlab.nextcode.pharmatechs.com
+  HostName gitlab.***
   &lt;span class=&quot;c&quot;&gt;#the prefer ssh auth mode&lt;/span&gt;
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/id_rsa_gitlab
