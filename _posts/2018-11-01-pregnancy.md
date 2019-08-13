@@ -3,7 +3,7 @@ layout: post
 title: pregnancy
 date: 2018-11-01
 author: deng liuyan
-header-img: "img/design_mode.jpg"
+header-img: "img/baby.jpg"
 catalog: true
 published: True
 tags:
