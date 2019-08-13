@@ -1,7 +1,8 @@
 ---
 layout: post
 title: work experience ppts
-date: 2018-09-10
+date: 2018-11-01
 categories: experience
-published: False
+published: True
 ---
+
