@@ -5,8 +5,8 @@
     <description>关于程序与设计 | 柳燕，Software Engineer</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 15 Aug 2019 10:40:24 +0800</pubDate>
-    <lastBuildDate>Thu, 15 Aug 2019 10:40:24 +0800</lastBuildDate>
+    <pubDate>Thu, 15 Aug 2019 10:44:34 +0800</pubDate>
+    <lastBuildDate>Thu, 15 Aug 2019 10:44:34 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -700,44 +700,6 @@ nginx &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; reload&lt;span class=&quo
 78
 79
 80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
 &lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;＃继承image,也可继承官方的image，建议先pull下来
 &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; django:1.9.6-python2&lt;/span&gt;
 
@@ -751,23 +713,10 @@ nginx &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; reload&lt;span class=&quo
 &lt;span class=&quot;c&quot;&gt;#ENV https_proxy ***&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;#ENV ftp_proxy ***&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; environment test&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak &amp;amp;&amp;amp; \&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#    echo &quot;deb http://mirrors.163.com/debian/ jessie main non-free contrib&quot; &amp;gt;/etc/apt/sources.list &amp;amp;&amp;amp; \&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#    echo &quot;deb http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib&quot; &amp;gt;&amp;gt;/etc/apt/sources.list &amp;amp;&amp;amp; \&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#    echo &quot;deb-src http://mirrors.163.com/debian/ jessie main non-free contrib&quot; &amp;gt;&amp;gt;/etc/apt/sources.list &amp;amp;&amp;amp; \&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#    echo &quot;deb-src http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib&quot; &amp;gt;&amp;gt;/etc/apt/sources.list&lt;/span&gt;
 
+&lt;span class=&quot;c&quot;&gt;#安装包&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;apt-get update &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt-get &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\
 &lt;/span&gt;        ca-certificates &lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;        g++ &lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;        gettext &lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;        libaio1 libaio-dev &lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;        unzip &lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;        libffi-dev &lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;        gettext-base &lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;        gettext-base &lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;        redis-server &lt;span class=&quot;se&quot;&gt;\
-&lt;/span&gt;        libffi-dev &lt;span class=&quot;se&quot;&gt;\
 &lt;/span&gt;        vim &lt;span class=&quot;se&quot;&gt;\
 &lt;/span&gt;        cron &lt;span class=&quot;se&quot;&gt;\
 &lt;/span&gt;        curl &lt;span class=&quot;se&quot;&gt;\
@@ -776,53 +725,28 @@ nginx &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; reload&lt;span class=&quo
 &lt;/span&gt;        libssl-dev &lt;span class=&quot;se&quot;&gt;\
 &lt;/span&gt;        &lt;span class=&quot;nt&quot;&gt;--no-install-recommends&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; /var/lib/apt/lists/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
 
-&lt;span class=&quot;k&quot;&gt;ADD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; instantclient-basic-linux.x64-11.2.0.4.0.zip /opt/&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;ADD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; instantclient-sdk-linux.x64-11.2.0.4.0.zip /opt/&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;ADD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; jdk-8u121-linux-x64.tar /opt/&lt;/span&gt;
+
 &lt;span class=&quot;k&quot;&gt;ADD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; requirements.txt /opt/&lt;/span&gt;
 
+&lt;span class=&quot;c&quot;&gt;#可run一些安装包&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; /usr/lib/jvm
 &lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cp&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; /opt/jdk1.8.0_121 /usr/lib/jvm
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_121&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;~/.bashrc
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;export JRE_HOME=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JAVA_HOME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/jre&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;~/.bashrc
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;export CLASSPATH=.:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JAVA_HOME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/lib:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JRE_HOME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/lib&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;~/.bashrc
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;export PATH=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JAVA_HOME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/bin:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;~/.bashrc
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;/bin/bash &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;source ~/.bashrc&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;update-alternatives &lt;span class=&quot;nt&quot;&gt;--install&lt;/span&gt; /usr/bin/java java /usr/lib/jvm/jdk1.8.0_121/bin/java 300
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;update-alternatives &lt;span class=&quot;nt&quot;&gt;--install&lt;/span&gt; /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_121/bin/javac 300
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;update-alternatives &lt;span class=&quot;nt&quot;&gt;--install&lt;/span&gt; /usr/bin/jar jar /usr/lib/jvm/jdk1.8.0_121/bin/jar 300
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;update-alternatives &lt;span class=&quot;nt&quot;&gt;--install&lt;/span&gt; /usr/bin/javah javah /usr/lib/jvm/jdk1.8.0_121/bin/javah 300
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;update-alternatives &lt;span class=&quot;nt&quot;&gt;--install&lt;/span&gt; /usr/bin/javap javap /usr/lib/jvm/jdk1.8.0_121/bin/javap 300
 
 &lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /opt &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; unzip instantclient-basic-linux.x64-11.2.0.4.0.zip &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\
 &lt;/span&gt;    unzip instantclient-sdk-linux.x64-11.2.0.4.0.zip &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\
 &lt;/span&gt;    &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /opt/instantclient_11_2 &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\
 &lt;/span&gt;    &lt;span class=&quot;nb&quot;&gt;ln&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; libclntsh.so.11.1 libclntsh.so
 
-&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; ORACLE_HOME /opt/instantclient_11_2&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; DYLD_LIBRARY_PATH /opt/instantclient_11_2&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; LD_LIBRARY_PATH /opt/instantclient_11_2&lt;/span&gt;
-
 &lt;span class=&quot;c&quot;&gt;#RUN pip install --upgrade pip&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; /opt/requirements.txt
 
 &lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; DB_NAME1 tmp&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; DB_NAME2 tmp&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; DB_USER1 tmp&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; DB_USER2 tmp&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; DB_PASSWORD1 tmp&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; DB_PASSWORD2 tmp&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; DB_HOST1 tmp&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; DB_HOST2 tmp&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; DB_PORT1 tmp&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; DB_PORT2 tmp&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; USERNAME tmp&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; PASSWORD tmp&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; JOBNAME tmp&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; CSA_USERNAME tmp&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; CSA_PASSWORD tmp&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; REDIS redis://10.80.121.35:6370&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; REDIS redis://***&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Asia/Shanghai&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; /etc/timezone
 &lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;dpkg-reconfigure &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; noninteractive tzdata
