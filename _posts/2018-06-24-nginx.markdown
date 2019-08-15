@@ -54,7 +54,7 @@ uwsgi_read_timeout 60;
 uwsgi_next_upstream error;
 
 #配置后台服务器，默认第一台执行
-upstream lims_ext_uwsgi {
+upstream uwsgi_server {
     $SERVER1
     $SERVER2
 }
@@ -111,7 +111,7 @@ server {
         }
         
         #nginx设置当前服务器为代理服务器，支持uwsgi协议，向后台请求
-        uwsgi_pass uwsgi_backend_server;
+        uwsgi_pass uwsgi_server;
         include     /etc/nginx/conf/uwsgi_params;
 
         #Proxy Settings，配置了uwsgi可不用
